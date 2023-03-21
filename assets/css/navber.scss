@@ -1,0 +1,250 @@
+.x-hamburger {
+    margin-right: 15px;
+    margin-top: 15px;
+    width: 25px;
+    height: 24px;
+    position: relative;
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+    transition: 0.5s ease-in-out;
+    cursor: pointer;
+}
+
+@media (max-width: 991.98px) {
+    .x-hamburger {
+        margin-right: 10px;
+    }
+}
+
+.x-hamburger span {
+    width: 70%;
+    display: block;
+    position: absolute;
+    height: 3px;
+    background: #fff;
+    border-radius: 9px;
+    opacity: 1;
+    left: 0;
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+    transition: 0.25s ease-in-out;
+}
+
+.x-hamburger span:first-child {
+    top: 0;
+    -webkit-animation: x-hamburger-wave 0.4s ease-out infinite alternate;
+    animation: x-hamburger-wave 0.4s ease-out infinite alternate;
+}
+
+.x-hamburger span:first-child,
+.x-hamburger span:nth-child(2) {
+    -webkit-transform-origin: left center;
+    transform-origin: left center;
+}
+
+.x-hamburger span:nth-child(2) {
+    top: 9px;
+    -webkit-animation: x-hamburger-wave 0.4s ease-out 0.3s infinite alternate;
+    animation: x-hamburger-wave 0.4s ease-out 0.3s infinite alternate;
+}
+
+.x-hamburger span:nth-child(3) {
+    top: 18px;
+    -webkit-transform-origin: left center;
+    transform-origin: left center;
+    -webkit-animation: x-hamburger-wave 0.4s ease-out 0.6s infinite alternate;
+    animation: x-hamburger-wave 0.4s ease-out 0.6s infinite alternate;
+}
+
+.x-hamburger.-open {
+    width: 25px;
+}
+
+.x-hamburger.-open span {
+    width: 100%;
+    -webkit-animation: none;
+    animation: none;
+}
+
+.x-hamburger.-open span {
+    width: 100%;
+    -webkit-animation: none;
+    animation: none;
+}
+
+.x-hamburger.-open span:first-child {
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    top: 0;
+    left: 5px;
+}
+
+.x-hamburger.-open span:nth-child(2) {
+    width: 0;
+    opacity: 0;
+}
+
+.x-hamburger.-open span:nth-child(3) {
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    top: 18px;
+    left: 5px;
+}
+
+.x-menu-list-sidebar {
+    // display: none;
+    position: fixed;
+    left: -100%;
+    top: 0;
+    height: 100%;
+    min-width: 110px;
+    z-index: 60;
+    text-align: center;
+    transition: left 0.3s;
+}
+
+@media (max-width: 991.98px) {
+    .x-menu-list-sidebar {
+        display: block;
+        min-width: 110px;
+        position: fixed;
+        left: -100%;
+        top: 0;
+        height: 100%;
+        z-index: 60;
+        text-align: center;
+        transition: left 0.3s;
+    }
+}
+
+.x-menu-list-sidebar .-brand-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 1rem 0;
+}
+
+.x-menu-list-sidebar .-brand-heading .-logo-img {
+    position: relative;
+}
+
+.x-menu-list-sidebar .-brand-heading .-logo {
+    width: 60px;
+}
+
+.x-menu-list-sidebar .-brand-heading .-dropdown-ic {
+    position: absolute;
+    top: 50%;
+    right: -20px;
+    width: 16px;
+    height: 16px;
+    background: #3c99ef;
+    border-radius: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+    .x-menu-list-sidebar .-brand-heading .-dropdown-ic .fas {
+        transition: none;
+    }
+}
+
+.x-menu-list-sidebar .-brand-heading .-dropdown-ic.-open .fas {
+    -webkit-transform: translate(-50%, -58%) rotate(180deg);
+    transform: translate(-50%, -58%) rotate(180deg);
+}
+
+.x-menu-list-sidebar .-inner-wrapper {
+    position: relative;
+    height: 100%;
+    padding: 1rem 1.25rem;
+    // background: #a4ddf0;
+    // background: linear-gradient(0deg, #3900d6bd 0%, #a033ff7d 81%);
+    // background: linear-gradient(0deg, #3900d6f2 0%, #a033fff1 81%);
+    background: linear-gradient(to bottom, #6f6eb2 3%, #352c64 106%);
+
+    z-index: 60;
+    overflow: auto;
+    border-radius: 0 30px 30px 0;
+}
+
+.x-menu-list-sidebar .-inner-wrapper .navbar-nav {
+    margin-top: 1rem;
+    flex-direction: column;
+    list-style-type: none;
+}
+
+.x-menu-list-sidebar .-inner-wrapper .navbar-nav .nav-item .nav-link {
+    // padding: 2.50rem 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.x-menu-list-sidebar .-inner-wrapper .navbar-nav .nav-item .nav-link.active {
+    position: relative;
+}
+
+.x-menu-list-sidebar .-inner-wrapper .navbar-nav .nav-item .nav-link.active:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 110%;
+    height: 20px;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    background: 50% / contain url(/build/web/ez-bet/img/menu-active.png) no-repeat;
+}
+
+.x-menu-list-sidebar .-inner-wrapper .navbar-nav .nav-item .nav-link .-text {
+    margin-top: 6px;
+    color: #fff;
+    transition: color 0.3s;
+}
+
+.x-menu-list-sidebar .-inner-wrapper .navbar-nav .nav-item .nav-link .-img-menu {
+    width: 50px;
+}
+
+.x-menu-list-sidebar .-overlay {
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 55;
+    background: rgba(103, 154, 191, 0.4);
+}
+
+.x-menu-list-sidebar.-open {
+    left: 0;
+}
+
+.x-menu-list-sidebar.-open .-overlay {
+    display: block;
+}
+
+@-webkit-keyframes x-hamburger-wave {
+    0% {
+        width: 70%;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes x-hamburger-wave {
+    0% {
+        width: 70%;
+    }
+
+    to {
+        width: 100%;
+    }
+}
