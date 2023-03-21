@@ -88,6 +88,12 @@ A:visited {
     }
 }
 
+@media (max-width: 710px) {
+    .inner-banner {
+        height: 230vh;
+    }
+}
+
 @media (max-width: 765px) {
     .inner-banner {
         height: 280vh;
